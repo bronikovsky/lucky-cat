@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  database:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=luckycat
+      - POSTGRES_DB=luckycat
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"

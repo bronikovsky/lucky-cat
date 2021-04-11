@@ -1,0 +1,34 @@
+@mixin typography-variant-button {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 0.02rem;
+}
+
+@mixin typography-variant-overline {
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  line-height: 0.75rem;
+}
+
+@mixin typography-variant-subheading {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+@mixin typography-variant-heading {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+@mixin typography-variant-body {
+  font-size: 1rem;
+
+  b {
+    font-weight: 600;
+  }
+}

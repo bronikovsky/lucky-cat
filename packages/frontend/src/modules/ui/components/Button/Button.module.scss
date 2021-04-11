@@ -1,0 +1,54 @@
+@import './mixins';
+@import '../Typography/mixins';
+@import '../../common';
+
+.root {
+  border-radius: $border-radius;
+  min-height: $element-height;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  outline: 0;
+  position: relative;
+
+  @include typography-variant-button;
+  @include interaction-active-scale;
+
+  .icon {
+    height: 1rem;
+    width: auto;
+    margin-right: 8px;
+    fill: currentColor;
+    margin-top: 1px;
+    color: inherit;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &[disabled]{
+    transform: none !important;
+    cursor: not-allowed;
+  }
+
+  span {
+    pointer-events: none;
+    font: inherit;
+  }
+
+  &[disabled] * {
+    opacity: 0.6;
+  }
+}
+
+.storybookContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > button {
+    margin: 8px;
+  }
+}

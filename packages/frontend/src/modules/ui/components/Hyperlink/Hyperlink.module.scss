@@ -1,0 +1,15 @@
+.root {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  &:visited {
+    color: var(--primary);
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

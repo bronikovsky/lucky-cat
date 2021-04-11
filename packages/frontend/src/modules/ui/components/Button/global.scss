@@ -1,0 +1,8 @@
+@import '../../common';
+
+:root {
+  --button-text-dark: var(--text-dark);
+  --button-text-light: var(--text-light);
+  --button-embedded-lighten: var(--transparent-light);
+  --button-embedded-darken: var(--transparent-dark);
+}

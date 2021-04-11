@@ -1,0 +1,49 @@
+@import './common';
+
+:root {
+  --text-dark: hsl(210, 9%, 9%);
+  --text-light: hsl(0, 0%, 100%);
+  --transparent-light: hsla(0, 0%, 100%, 0.1);
+  --transparent-dark: hsla(0, 0%, 0%, 0.1);
+  --background-light: hsl(0, 0%, 98%);
+  --background-dark: hsl(210, 9%, 9%);
+  --foreground-light: hsl(0, 0%, 100%);
+  --foreground-dark: hsl(223, 8%, 17%);
+
+  --primary: hsl(137, 35%, 48%);
+  --primary-lighter: hsl(137, 35%, 58%);
+
+  --error: hsl(350, 79%, 55%);
+  --error-lighter: hsl(350, 72%, 64%);
+
+  --warning: hsl(44, 100%, 68%);
+  --warning-lighter: hsl(44, 100%, 77%);
+
+  --padding-default: 24px;
+  --border-default: 8px;
+}
+
+.Examine-light, .Examine-dark {
+  --lighter-gray: #eeeeee;
+  --light-gray: #dddddd;
+  --gray: #cccccc;
+  --dark-gray: #bbbbbb;
+  --darker-gray: #333333;
+}
+
+
+.Examine-light {
+  --text-primary: var(--text-dark);
+  --text-secondary: hsl(213, 5%, 54%);
+  --background: var(--background-light);
+  --foreground: var(--foreground-light);
+  --border: hsl(0, 0%, 83%);
+}
+
+.Examine-dark {
+  --text-primary: var(--text-light);
+  --text-secondary: hsl(213, 5%, 60%);
+  --background: var(--background-dark);
+  --foreground: var(--foreground-dark);
+  --border: hsl(270, 2%, 25%);
+}

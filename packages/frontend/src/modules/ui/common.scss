@@ -1,0 +1,44 @@
+/* --- Sizes --- */
+
+$element-height: 42px;
+$border-radius: 8px;
+
+/* --- Colors --- */
+
+$border: hsl(270, 1%, 27%);
+$border-lighter: hsl(270, 1%, 54%);
+$border-lightest: hsl(270, 1%, 80%);
+
+/* --- Media queries --- */
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+@mixin mobile {
+  @media screen and (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+/* --- Other --- */
+
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}

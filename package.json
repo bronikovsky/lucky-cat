@@ -1,0 +1,28 @@
+{
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  },
+  "name": "luckycat",
+  "private": true,
+  "scripts": {
+    "development": "/bin/bash scripts/start-development.sh",
+    "release": "node scripts/release.js",
+    "deploy": "/bin/bash scripts/deploy.sh",
+    "run:backend": "yarn --cwd=packages/backend",
+    "run:frontend": "yarn --cwd=packages/frontend",
+    "migrate:make": "yarn run:backend migrate:make",
+    "migrate:latest": "yarn run:backend migrate:latest",
+    "migrate:rollback": "yarn run:backend migrate:rollback",
+    "seed:make": "yarn run:backend seed:make",
+    "seed:run": "yarn run:backend seed:run",
+    "storybook": "yarn run:frontend storybook",
+    "eslint": "yarn run:backend eslint && yarn run:frontend eslint",
+    "postinstall": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
+    "test:backend": "docker-compose up -d"
+  },
+  "dependencies": {
+    "husky": "^6.0.0",
+    "semver": "^7.3.5"
+  }
+}

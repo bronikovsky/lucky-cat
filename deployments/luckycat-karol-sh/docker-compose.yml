@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  backend:
+    image: "797364302565.dkr.ecr.eu-west-2.amazonaws.com/luckycat-backend:0.0.1"
+    environment:
+      - DB_HOST=$LUCKYCAT_POSTGRES_HOST
+      - DB_PASSWORD=$LUCKYCAT_POSTGRES_DEV_PASSWORD
+  frontend:
+    image: "797364302565.dkr.ecr.eu-west-2.amazonaws.com/luckycat-frontend:0.0.1"
+    volumes:
+      - "./env_file:/package-root/.env"
+    ports:
+      - "9193:80"

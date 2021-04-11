@@ -1,0 +1,82 @@
+@import '../../common';
+
+.root {
+  max-width: 300px;
+
+  .field {
+    height: $element-height;
+    background-color: var(--text-field-background);
+    border-radius: $border-radius;
+    position: relative;
+    font-size: 1rem;
+    border: 1px solid var(--text-field-border);
+    display: inline-block;
+    transition: border-color 0.1s;
+
+    &:hover, &.focused {
+      border-color: var(--text-field-border-hover);
+    }
+
+    &.error {
+      border-color: var(--error) !important;
+    }
+
+    input {
+      height: 100%;
+      width: 100%;
+      min-width: 300px;
+      padding: 0 12px;
+      display: block;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: inherit;
+      color: var(--text-field-color);
+
+      &::placeholder {
+        color: var(--text-field-border);
+      }
+    }
+    //& > svg {
+    //  position: absolute;
+    //  top: 50%;
+    //  transform: translateY(-50%);
+    //  * {
+    //    fill: var(--text-primary);
+    //  }
+    //
+    //  &:last-child {
+    //    right: 16px;
+    //  }
+    //}
+    //
+    //
+    //&.startIcon {
+    //  padding-left: $padding-with-icon;
+    //
+    //  input {
+    //    padding-left: 0;
+    //  }
+    //
+    //  label {
+    //    left: $padding-with-icon;
+    //  }
+    //
+    //  & > svg:first-child {
+    //    left: 16px;
+    //  }
+    //}
+  }
+
+  .hint {
+    font-size: 0.750rem;
+    color: var(--text-field-hint-color);
+    margin-top: 6px;
+  }
+
+  .error:not(.field) {
+    font-size: 0.750rem;
+    color: var(--error);
+    margin-top: 6px;
+  }
+}

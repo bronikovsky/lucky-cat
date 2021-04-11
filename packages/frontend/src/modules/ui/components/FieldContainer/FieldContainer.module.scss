@@ -1,0 +1,40 @@
+.root {
+  padding: 2px 0 4px 24px;
+  border-left: 4px solid var(--light-gray);
+  margin: 20px 0;
+
+  &:last-of-type {
+    margin-bottom: 42px;
+  }
+
+  /*
+  TODO: Add focus support for all cases (Select, TextField, Checkbox, ...)
+
+  &.focused {
+    border-left-color: var(--input-border-hover);
+  }
+  */
+
+  &.error {
+    border-left-color: var(--error);
+  }
+
+  & > div:first-child > label {
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    margin: 0 0 8px 0;
+    cursor: pointer;
+  }
+
+  .hint {
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+
+  .error {
+    font-size: 0.875rem;
+    margin-top: 8px;
+  }
+}

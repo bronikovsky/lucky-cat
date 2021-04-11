@@ -1,0 +1,5 @@
+@mixin interaction-active-scale {
+  &:active {
+    transform: scale(0.98);
+  }
+}

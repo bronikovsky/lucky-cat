@@ -1,0 +1,57 @@
+@import './mixins';
+
+.root {
+  --e-typography-color: var(--text-primary);
+
+  &.html {
+    * {
+      color: inherit;
+    }
+  }
+
+  ul {
+    padding-left: 1rem;
+    color: inherit;
+
+    li {
+      position: relative;
+      color: inherit;
+
+      &::before {
+        content: '-';
+        width: 1rem;
+        opacity: 0.6;
+        left: -1rem;
+        color: inherit;;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+    }
+  }
+
+  /** Variants */
+
+  &.body {
+    @include typography-variant-body;
+  }
+
+  &.heading {
+    @include typography-variant-heading;
+  }
+
+  &.subheading {
+    @include typography-variant-subheading;
+  }
+
+  &.overline {
+    @include typography-variant-overline;
+  }
+
+  &.button {
+    @include typography-variant-button;
+  }
+}

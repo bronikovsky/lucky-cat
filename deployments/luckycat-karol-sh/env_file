@@ -1,0 +1,5 @@
+DB_USER=luckycat
+DB_PORT=5432
+DB_DATABASE=luckycat
+
+DB_AUTO_SYNC=1

@@ -1,0 +1,20 @@
+@import '../../common';
+
+:root {
+  --text-field-hint-color: #{$border-lighter};
+}
+
+.Examine-dark, .Examine-light {
+  --text-field-color: var(--text-primary);
+  --text-field-background: var(--background);
+}
+
+.Examine-light {
+  --text-field-border: #{$border-lightest};
+  --text-field-border-hover: #{$border-lighter};
+}
+
+.Examine-dark {
+  --text-field-border: #{$border};
+  --text-field-border-hover: #{$border-lighter};
+}

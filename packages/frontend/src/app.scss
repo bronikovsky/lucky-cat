@@ -1,0 +1,7 @@
+@import './modules/ui/reset';
+@import './modules/ui/themes';
+
+body {
+  overflow-y: scroll;
+  background-color: var(--background);
+}
