@@ -5,15 +5,19 @@ import Sidebar from '../Sidebar';
 
 type Props = {
   children: React.ReactNode;
+  title: string;
+  SidebarChildren: React.ReactElement | React.ReactElement[];
 }
 
 const Layout = (props: Props): React.ReactElement => {
-  const { children } = props;
+  const { children, title, SidebarChildren } = props;
 
   return (
     <div className={classes.root}>
-      <Sidebar/>
-      <Header/>
+      <Sidebar>
+        {SidebarChildren}
+      </Sidebar>
+      <Header title={title}/>
       <main>
         {children}
       </main>

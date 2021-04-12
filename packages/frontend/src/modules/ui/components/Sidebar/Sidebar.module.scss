@@ -4,4 +4,15 @@
   bottom: var(--padding-default);
   width: var(--sidebar-witdh);
   border-right: 1px solid var(--border);
+  padding: var(--padding-default);
+
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+
+    .logo {
+      height: 80px;
+    }
+  }
 }

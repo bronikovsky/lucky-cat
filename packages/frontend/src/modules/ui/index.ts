@@ -9,7 +9,7 @@ export { default as Hyperlink } from './components/Hyperlink';
 export { default as IconButton } from './components/IconButton';
 export { default as Layout } from './components/Layout';
 export { default as Logo } from './components/Logo';
-export { default as Sidebar } from './components/Sidebar';
+export { default as Sidebar, SidebarButton } from './components/Sidebar';
 export { default as Svg } from './components/Svg';
 export { default as TextField } from './components/TextField';
 export { default as Typography } from './components/Typography';

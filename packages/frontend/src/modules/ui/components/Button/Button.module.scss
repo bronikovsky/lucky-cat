@@ -8,7 +8,6 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 0 14px;
   outline: 0;
   position: relative;
@@ -21,7 +20,6 @@
     width: auto;
     margin-right: 8px;
     fill: currentColor;
-    margin-top: 1px;
     color: inherit;
   }
 
@@ -41,6 +39,18 @@
 
   &[disabled] * {
     opacity: 0.6;
+  }
+
+  &.left {
+    justify-content: left;
+  }
+
+  &.right {
+    justify-content: right;
+  }
+
+  &.center {
+    justify-content: center;
   }
 }
 

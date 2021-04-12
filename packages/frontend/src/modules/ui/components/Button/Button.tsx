@@ -1,9 +1,12 @@
 import './global.scss';
 import * as React from 'react';
+import { Logger } from '../../utils';
 import { useTheme } from '../../contexts';
 import classes from './Button.module.scss';
 import classnames from 'classnames';
 import Svg from '../Svg';
+
+const logger = new Logger('Button');
 
 export type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'> & {
   /**
@@ -16,12 +19,15 @@ export type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>
   background?: string;
   /** See `background` prop. */
   color?: string;
+  /** See `background` prop. */
+  hoverBackground?: string;
 
   hoverEffect?: 'lighten' | 'darken';
 
   loading?: boolean;
 
   fullWidth?: boolean;
+  justify?: 'left' | 'right' | 'center';
   StartIcon?: React.ComponentType<{ className: string }>;
 }
 
@@ -49,11 +55,17 @@ const Button = (props: Props): React.ReactElement => {
     children,
     color = defaultColor,
     background = defaultBackground,
+    hoverBackground,
     hoverEffect = defaultHoverEffect,
     loading,
     fullWidth,
+    justify = 'center',
     ...buttonProps
   } = props;
+
+  if (hoverBackground && props.hoverEffect && process.env.NODE_ENV !== 'production') {
+    logger.warn('Using `hoverEffect` prop with `hoverBackground` - `hoverEffect` will not be applied.');
+  }
 
   const id = React.useMemo(() => {
     return _id || getId();
@@ -62,7 +74,7 @@ const Button = (props: Props): React.ReactElement => {
   React.useLayoutEffect(() => {
     if (hoverEffect) {
       const style = document.createElement('style');
-      const hoverBackground = hoverEffect === 'lighten' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+      const hoverBg = hoverBackground || (hoverEffect === 'lighten' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)');
 
       style.innerHTML = `
         #${id} {
@@ -74,17 +86,17 @@ const Button = (props: Props): React.ReactElement => {
           color: ${getColorStyleValue(defaultColor)} !important;
         }
         #${id}:hover:not([disabled]) {
-          background-image: linear-gradient(${hoverBackground}, ${hoverBackground});
+          background-image: linear-gradient(${hoverBg}, ${hoverBg});
         }
       `;
       document.head.appendChild(style);
 
       return () => { document.head.removeChild(style); };
     }
-  }, [id, hoverEffect, background, color, defaultBackground, defaultColor]);
+  }, [id, hoverEffect, background, color, defaultBackground, defaultColor, hoverBackground]);
 
   const conditionalClasses = { [classes.fullWidth]: fullWidth };
-  const rootClass = classnames(classes.root, className, conditionalClasses);
+  const rootClass = classnames(classes.root, className, classes[justify], conditionalClasses);
 
   return (
     <button id={id} type={'button'} className={rootClass} {...buttonProps}>

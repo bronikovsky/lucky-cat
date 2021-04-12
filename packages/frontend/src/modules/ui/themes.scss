@@ -10,8 +10,10 @@
   --foreground-light: hsl(0, 0%, 100%);
   --foreground-dark: hsl(223, 8%, 17%);
 
-  --primary: hsl(137, 35%, 48%);
-  --primary-lighter: hsl(137, 35%, 58%);
+  --primary-hsl: 248, 65%, 39%;
+
+  --primary: hsl(var(--primary-hsl));
+  --primary-lighter: hsl(248, 65%, 39%);
 
   --error: hsl(350, 79%, 55%);
   --error-lighter: hsl(350, 72%, 64%);
@@ -19,7 +21,7 @@
   --warning: hsl(44, 100%, 68%);
   --warning-lighter: hsl(44, 100%, 77%);
 
-  --padding-default: 24px;
+  --padding-default: 32px;
   --border-default: 8px;
 }
 

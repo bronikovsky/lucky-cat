@@ -1,3 +1,12 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 
+  main {
+    flex: auto;
+    margin-left: var(--sidebar-witdh);
+    margin-top: var(--header-height);
+    padding: var(--padding-default);
+  }
 }
